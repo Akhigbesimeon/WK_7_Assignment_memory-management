@@ -39,7 +39,6 @@ void freeEmails(char **emails, int n) {
 }
 
 int main() {
-    // Allocate memory for 10 student email pointers
     char **emails = (char **)malloc(INITIAL_STUDENTS * sizeof(char *));
     if (emails == NULL) {
         printf("Memory allocation failed\n");
@@ -50,7 +49,7 @@ int main() {
     readEmails(emails, INITIAL_STUDENTS);
     displayEmails(emails, INITIAL_STUDENTS);
 
-    // Retain 6 students emails
+    // Retain 6 student emails
     for (int i = REDUCED_STUDENTS; i < INITIAL_STUDENTS; i++) {
         free(emails[i]);
     }
